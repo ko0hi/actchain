@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "actchain"
+version = "0.1.0"
+description = ""
+authors = ["ko0hi <ko0hi.4731@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.5.1"
+pyproject-flake8 = "^6.0.0.post1"
+black = "^23.9.1"
+isort = "^5.12.0"
+pytest = "^7.4.2"
+pytest-asyncio = "^0.21.1"
+pytest-mock = "^3.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+ignore = 'E203,W291,W292,W293,W391,W503'
+exclude = '\.git,__pycache__,\.venv,\.eggs,\.mypy_cache'
+per-file-ignores = '__init__.py:F401,F403,F405'
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '__pycache__,\.egg-info,\.git,\.mypy_cache,\.tox,\.venv,\.direnv'
+
+[tool.mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
