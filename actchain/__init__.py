@@ -1,12 +1,17 @@
-from .chain import (
+from . import exceptions
+from .chains import (
+    AccompanyChain,
+    Chain,
     ConcurrentFunctionChain,
     ExclusiveFunctionChain,
+    Flow,
     FunctionChain,
-    InterchangeChain,
-    IntervalThinningChain,
+    IntervalSamplingChain,
     JunctionChain,
+    LoopChain,
+    PassThroughChain,
 )
 from .event import Event
-from .flow import Flow
 from .function import Function
 from .loop import Loop
+from .singleton import State
