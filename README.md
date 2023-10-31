@@ -1,5 +1,8 @@
 # actchain: Asynchronous Crypto Trading Chain
 
+[![pytest](https://github.com/ko0hi/actchain/actions/workflows/pytest.yml/badge.svg)](https://github.com/ko0hi/actchain/actions/workflows/pytest.yml)
+
+
 ```python
 from typing import AsyncGenerator
 
