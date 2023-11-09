@@ -47,7 +47,7 @@ run_forever: bool = True
 ライブラリをインストール。
 
 ```bash
-pip loguru better-exceptions install httpx git+https://github.com/ko0hi/pybotters-wrapper
+pip install actchain httpx git+https://github.com/ko0hi/pybotters-wrapper
 ```
 
 実行。
