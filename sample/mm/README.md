@@ -2,6 +2,8 @@
 
 ## 準備
 
+python 3.11.0 or higherを準備。
+
 `pybotters-apis.json`を用意して、`main.py`と同じディレクトリに置く。
 
 ```json
@@ -42,7 +44,7 @@ order_interval: int = 3
 run_forever: bool = True
 ```
 
-ライブラリをインストール。トップでpoetry installしておく。
+ライブラリをインストール。
 
 ```bash
 pip loguru better-exceptions install httpx git+https://github.com/ko0hi/pybotters-wrapper
