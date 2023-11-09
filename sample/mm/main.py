@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import asyncio
 
-import actchain
 from lib import (
     BuySellRatioEstimator,
     CancelOrderCommander,
@@ -19,6 +18,8 @@ from lib import (
     PositionStatusLoop,
     config,
 )
+
+import actchain
 
 
 async def main() -> None:

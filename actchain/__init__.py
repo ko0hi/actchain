@@ -1,4 +1,5 @@
 from . import exceptions
+from .apis import run
 from .chains import (
     AccompanyChain,
     Chain,
@@ -15,4 +16,3 @@ from .event import Event
 from .function import Function
 from .loop import Loop
 from .singleton import State
-from .apis import run

@@ -2,12 +2,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from .ohlcv import (
-    OHLCVLoop,
-    ExtendOHLCVFunction,
-    TInterval,
-    _interval_to_seconds,
-)
+from .ohlcv import ExtendOHLCVFunction, OHLCVLoop, TInterval, _interval_to_seconds
 
 
 @pytest.mark.asyncio

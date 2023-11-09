@@ -1,7 +1,7 @@
 import asyncio
 
-from actchain.chains.base import Chainable
 from actchain.chains import Flow
+from actchain.chains.base import Chainable
 
 
 async def run(*chainables: Chainable, run_forever: bool = False) -> None:
