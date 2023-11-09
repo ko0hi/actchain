@@ -52,7 +52,7 @@ pip loguru better-exceptions install httpx git+https://github.com/ko0hi/pybotter
 
 
 ```bash
-PYTHONPATH=../../ python main.py
+PYTHONPATH=../../ python main.py -c config.json
 ```
 
 ## アルゴ
