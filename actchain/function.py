@@ -15,6 +15,10 @@ from actchain.exceptions import InvalidOverrideError
 
 class Function(Generic[TReceiveEventData, TSendEventData], metaclass=ABCMeta):
     @overload
+    def __init__(self):
+        ...
+
+    @overload
     def __init__(self: Function[TDefaultEventData, TDefaultEventData]):
         ...
 
@@ -78,6 +82,12 @@ class Function(Generic[TReceiveEventData, TSendEventData], metaclass=ABCMeta):
     @overload
     def as_chain(
         self, *, chain_type: Literal["exclusive"]
+    ) -> ExclusiveFunctionChain[TReceiveEventData, TSendEventData]:
+        ...
+
+    @overload
+    def as_chain(
+        self, name: str, chain_type: Literal["exclusive"]
     ) -> ExclusiveFunctionChain[TReceiveEventData, TSendEventData]:
         ...
 
