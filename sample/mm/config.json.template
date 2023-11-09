@@ -1,0 +1,11 @@
+{
+  "pybotters_apis": "pybotters-apis.json",
+  "order_size": 0.01,
+  "max_position_size": 0.02,
+  "reorder_price_diff": 0.2,
+  "k": 20,
+  "ohlcv_interval": "5m",
+  "sleep_at_api_limit": 60,
+  "order_interval": 3,
+  "run_forever": false
+}
