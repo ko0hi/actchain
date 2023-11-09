@@ -3,6 +3,18 @@
 [![pytest](https://github.com/ko0hi/actchain/actions/workflows/pytest.yml/badge.svg)](https://github.com/ko0hi/actchain/actions/workflows/pytest.yml)
 
 
+
+## Installation
+
+
+```bash
+pip install actchain
+```
+Requires Python 3.11 or higher.
+
+## Usage
+
+
 ```python
 # An example of using actchain to compute the weighted mid price of the order book
 
