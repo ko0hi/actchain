@@ -13,7 +13,6 @@ jobs:
       matrix:
         python-version: ["3.11"]
         poetry-version: ["latest"]
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -27,13 +26,13 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-    - name: Lint with flake8
+    - name: Lint
       run: |
         make lint
-    - name: Test with pytest
+    - name: Test
       run: |
         make test
-    - name: Code formatting
+    - name: Format
       run: |
         make format
     - name: Check for changes
