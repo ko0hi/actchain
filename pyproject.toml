@@ -22,6 +22,7 @@ isort = "^5.12.0"
 pytest = "^7.4.2"
 pytest-asyncio = "^0.21.1"
 pytest-mock = "^3.11.1"
+ruff = "^0.1.5"
 
 [build-system]
 requires = ["poetry-core"]
@@ -44,3 +45,52 @@ exclude = '__pycache__,\.egg-info,\.git,\.mypy_cache,\.tox,\.venv,\.direnv'
 [tool.mypy]
 ignore_missing_imports = true
 check_untyped_defs = true
+
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+
+fixable = ["ALL"]
+unfixable = []
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+
+indent-style = "space"
+
+skip-magic-trailing-comma = false
+
+line-ending = "auto"
