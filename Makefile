@@ -8,7 +8,7 @@ lint-test:
 lint-sample:
 	poetry run ruff check sample
 typecheck:
-	poetry run mypy actchain
+	poetry run mypy --strict actchain
 typecheck-test:
 	poetry run mypy tests
 typecheck-sample:
