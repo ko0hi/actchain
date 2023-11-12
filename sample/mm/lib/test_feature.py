@@ -74,4 +74,6 @@ class TestBuySellRatioEstimator:
             + math.exp(-15)
         )
 
-        assert math.isclose(expected, BuySellRatioEstimator(k=3).estimate_by_orderbook(buys, sells))  # type: ignore
+        assert math.isclose(
+            expected, BuySellRatioEstimator(k=3).estimate_by_orderbook(buys, sells)
+        )  # type: ignore
