@@ -10,11 +10,11 @@ from lib import (
     ExtendPositionStatusFunction,
     LimitOrderCommander,
     OHLCVLoop,
-    OrderbookLoop,
     OrderCanceler,
     OrderPricer,
     OrderRequester,
     OrderStatusLoop,
+    OrderbookLoop,
     PositionStatusLoop,
     config,
 )

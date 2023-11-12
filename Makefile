@@ -1,12 +1,12 @@
 .PHONY: format lint typecheck test
 format:
-	poetry run black actchain sample tests && poetry run isort actchain sample tests
+	poetry run ruff format . && poetry run ruff . --select I --fix-only
 lint:
-	poetry run pflake8 actchain
+	poetry run ruff check actchain
 lint-test:
-	poetry run pflake8 tests
+	poetry run ruff check tests
 lint-sample:
-	poetry run pflake8 sample
+	poetry run ruff check sample
 typecheck:
 	poetry run mypy actchain
 typecheck-test:

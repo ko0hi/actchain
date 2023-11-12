@@ -16,31 +16,66 @@ loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.5.1"
-pyproject-flake8 = "^6.0.0.post1"
-black = "^23.9.1"
-isort = "^5.12.0"
 pytest = "^7.4.2"
 pytest-asyncio = "^0.21.1"
 pytest-mock = "^3.11.1"
+ruff = "^0.1.5"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
-
-[tool.flake8]
-max-line-length = 88
-ignore = 'E203,W291,W292,W293,W391,W503'
-exclude = '\.git,__pycache__,\.venv,\.eggs,\.mypy_cache'
-per-file-ignores = '__init__.py:F401,F403,F405'
-
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '__pycache__,\.egg-info,\.git,\.mypy_cache,\.tox,\.venv,\.direnv'
 
 [tool.mypy]
 ignore_missing_imports = true
 check_untyped_defs = true
+
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.extend-per-file-ignores]
+"__init__.py" = ["F401", "F403", "F405"]
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

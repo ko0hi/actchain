@@ -2,7 +2,17 @@ from __future__ import annotations
 
 import asyncio
 from abc import ABCMeta
-from typing import Any, Callable, Coroutine, Generic, Literal, Optional, Union, overload
+from typing import (
+    Any,
+    Callable,
+    Coroutine,
+    Generic,
+    Literal,
+    Optional,
+    Union,
+    cast,
+    overload,
+)
 
 from actchain.chains import (
     ConcurrentFunctionChain,
@@ -57,7 +67,7 @@ class Function(Generic[TReceiveEventData, TSendEventData], metaclass=ABCMeta):
         if asyncio.iscoroutinefunction(self._fn):
             return await self._fn(event)
         else:
-            return self._fn(event)
+            return cast(TSendEventData | None, self._fn(event))
 
     @overload
     def as_chain(self) -> FunctionChain[TReceiveEventData, TSendEventData]:
