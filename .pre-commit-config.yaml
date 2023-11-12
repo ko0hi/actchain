@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format
+        name: format
+        entry: make format
+        language: system
+        types: [python]
+      - id: lint
+        name: lint
+        entry: make lint
+        language: system
+        types: [python]
+      - id: test
+        name: test
+        entry: make test
+        language: system
+        types: [python]
+      - id: typecheck
+        name: typecheck
+        entry: make typecheck
+        language: system
+        types: [python]
