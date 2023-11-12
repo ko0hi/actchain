@@ -41,3 +41,6 @@ jobs:
           echo "Changes were found after running make format. Please ensure your code is formatted correctly."
           exit 1
         fi
+    - name: Type check
+      run: |
+        make typecheck
