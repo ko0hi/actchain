@@ -176,13 +176,16 @@ class LimitOrderCommander(
 
         limit_order_commands: list[LimitOrderCommand] = []
         keep_buy_orders, keep_sell_orders = [], []
+        buy_order_sizes, sell_order_sizes = 0.0, 0.0
 
         for bo in buy_orders:
+            buy_order_sizes += bo["size"]
             diff = abs(bo["price"] - buy_price)
             if diff < self._reorder_price_diff:
                 keep_buy_orders.append(bo)
 
         for so in sell_orders:
+            sell_order_sizes += so["size"]
             diff = abs(so["price"] - sell_price)
             if diff < self._reorder_price_diff:
                 keep_sell_orders.append(so)
@@ -194,8 +197,7 @@ class LimitOrderCommander(
         # new limit orders
         ordered = False
         if (
-            len(keep_buy_orders) == 0
-            and buy_position < self._max_position_size
+            buy_position + buy_order_sizes < self._max_position_size
             and not RateLimitState().is_being_suspended
         ):
             ordered = True
@@ -209,8 +211,7 @@ class LimitOrderCommander(
             )
 
         if (
-            len(keep_sell_orders) == 0
-            and sell_position < self._max_position_size
+            sell_position + sell_order_sizes < self._max_position_size
             and not RateLimitState().is_being_suspended
         ):
             ordered = True
