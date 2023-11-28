@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "actchain"
-version = "0.1.1"
+version = "0.1.2"
 license = "MIT"
 description = "Asynchronous Crypt Trading Chain: A toolkit for building cryptocurrency trading bots with asynchrnous loosely-couplled modules."
 homepage = "https://github.com/ko0hi/actchain"
